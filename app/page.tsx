@@ -1,7 +1,10 @@
+import Image from "next/image";
+import GetProducts from "./(components)/GetProducts";
 
 export default function Home() {
   return (
-    <h1>Hi</h1>
-
+    <div>
+      <GetProducts />
+    </div>
   );
 }
