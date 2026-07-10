@@ -2,12 +2,18 @@
 import React, { useEffect, useState } from 'react'
 import ProductList from './ProductList';
 
+interface Product{
+    id:number;
+    thumbnail:string;
+    title:string;
+}
+
 function GetProducts() {
-    const [products, setProducts] = useState<string[]>([]);
-    const getData = async()=>{
+    const [products, setProducts] = useState<Product[]>([]);
+        const getData = async()=>{
         const res = await fetch("https://dummyjson.com/products?limit=500")
-        const resJson = await res.json();
-        setProducts(resJson.products)
+        const data = await res.json();
+        setProducts(data.products)
     }
     useEffect(()=>{
         getData()
@@ -15,7 +21,7 @@ function GetProducts() {
     },[])
   return (
     <div>
-        {products.map((p:any)=>(
+        {products.map((p)=>(
            <ProductList key={p.id} title={p.title} img={p.thumbnail} />
         ))}
     </div>

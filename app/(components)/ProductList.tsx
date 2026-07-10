@@ -11,18 +11,17 @@ function ProductList({ title, img }: Props) {
     <div>
         <h3>{title}</h3>
         {/* Pass numeric values instead of strings with 'px' */}
-        {/* <Image 
-          src={img} 
+        <Image
+        src={img}
+        alt={title}
+        width={120}
+        height={120}
+      />
+        {/* <img src={img} 
           alt={title} 
           width={120} 
           height={120} 
-          style={{ objectFit: 'cover' }} 
-        /> */}
-        <img src={img} 
-          alt={title} 
-          width={120} 
-          height={120} 
-          style={{ objectFit: 'cover' }}  />
+          style={{ objectFit: 'cover' }}  /> */}
     </div>
   )
 }
